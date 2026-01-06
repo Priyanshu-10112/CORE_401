@@ -1,13 +1,12 @@
 package com.backend.medsetu.controller;
 
-import org.springframework.web.bind.annotation.*;
-
-import com.backend.medsetu.dto.LoginRequest;
 import com.backend.medsetu.entity.User;
 import com.backend.medsetu.repository.UserRepository;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin
 public class AuthController {
 
     private final UserRepository userRepository;
@@ -16,15 +15,11 @@ public class AuthController {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/login")
-    public User login(@RequestBody LoginRequest request) {
-
-        User user = userRepository.findByPhone(request.getPhone());
-
-        if (user == null) {
-            throw new RuntimeException("User not found");
+    @PostMapping("/register")
+    public User register(@RequestBody User user) {
+        if (userRepository.findByPhone(user.getPhone()).isPresent()) {
+            throw new RuntimeException("Phone already registered");
         }
-
-        return user;
+        return userRepository.save(user);
     }
 }

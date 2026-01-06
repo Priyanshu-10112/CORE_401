@@ -1,0 +1,11 @@
+name,price,category,inStock,rxRequired
+"Paracetamol 500mg",25.50,"Pain Relief",true,false
+"Amoxicillin 250mg",45.00,"Antibiotics",true,true
+"Vitamin D3 2000IU",180.25,"Vitamins",true,false
+"Metformin 500mg",85.75,"Diabetes",true,true
+"Cetirizine 10mg",35.99,"Allergy",true,false
+"Aspirin 75mg",15.50,"Heart Care",true,false
+"Omeprazole 20mg",65.00,"Digestive",true,true
+"Ibuprofen 400mg",28.75,"Pain Relief",true,false
+"Crocin Advance",22.00,"Pain Relief",true,false
+"Azithromycin 500mg",120.00,"Antibiotics",true,true
